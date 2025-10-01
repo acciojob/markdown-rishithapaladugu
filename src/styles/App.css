@@ -1,59 +1,45 @@
+h1 {
+    color: #27aedb;
+    text-align: center;
+    }
+    
 
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  font-family: sans-serif;
+button{
+    color: #27aedb;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
-.app {
-  height: 100%;
-}
-
+/* Parent container */
 .container {
-  display: flex;
-  height: 100vh; /* full viewport height */
+  display: flex;           /* Split horizontally */
+  height: 100vh;           /* Full height of the screen */
+}
+
+/* Left side: editor */
+.editor {
+  flex: 1;                 /* Take 50% width */
+  padding: 10px;
+  border-right: 2px solid #ccc;
+}
+
+.editor textarea {
   width: 100%;
-}
-
-.textarea {
-  width: 50%;
   height: 100%;
-  border: none;
-  padding: 1rem;
-  resize: none;
-  font-family: monospace;
-  font-size: 1rem;
-  background: #f0f1f5; /* light gray background */
-  outline: none;
-}
-
-.preview {
-  width: 50%;
-  height: 100%;
-  padding: 1rem;
-  background: #E9EAF2; /* same as textarea */
-  overflow-y: auto;
+  resize: none;            /* Prevent dragging */
+  font-size: 16px;
+  padding: 10px;
   box-sizing: border-box;
+  background-color: #27aedb;
 }
 
-/* Loading spinner centered inside preview */
-.loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.loading::after {
-  content: "";
-  width: 40px;
-  height: 40px;
-  border: 4px solid #ccc;       /* light gray */
-  border-top-color: #333;       /* darker part for spinner */
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
+/* Right side: preview */
+.preview {
+  flex: 1;                 /* Take 50% width */
+  padding: 10px;
+  background: cyan;
+  overflow-y: auto;         /* Scroll if content overflows */
+  font-size: 16px;
+  white-space: pre-wrap;    /* Keep line breaks */
 }
