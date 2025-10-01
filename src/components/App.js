@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import { MarkdownEditor } from "./MarkdownEditor";
-import '../styles/App.css'
+import React from 'react'
+import Markdown from './Markdown'
+import './../styles/App.css';
+
 
 const App = () => {
-
   return (
     <div className="app">
-      <MarkdownEditor/>
+        <Markdown/>
     </div>
-  );
-};
-export default App;
+  )
+}
+
+export default App
 
